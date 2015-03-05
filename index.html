@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hexadecimal para rgba()</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.css">
+
+</head>
+<body>
+    
+    <div class="container">        
+        <h1>Hexadecimal para rgba()</h1>
+        
+        <p>Este é um simples bookmarklet, para converter cores no formato hexadecimal, para o formato RGBA.</p>
+        <p>Clique no botão abaixo para testar ou arrate para a barra de favoritos para facilitar o acesso posterior</p>
+
+        <p>
+            <a class="bnt btn-large btn-default" title="Hex2Rgb" href="javascript:(function()%7B(function()%7B%22use%20strict%22%3Bvar%20regex%20%3D%20%2F%23(%5Babcdef0-9%5D%7B1%2C2%7D)(%5Babcdef0-9%5D%7B1%2C2%7D)(%5Babcdef0-9%5D%7B1%2C2%7D)%2F%3Bvar%20hexValue%20%3D%20prompt(%22Digite%20a%20cor%20em%20hexadecimal%20%5CnEx%3A%20%23ffffff%20ou%20%23fff%22)%3Bif%20(hexValue%20%26%26%20(hexValue.length%20%3D%3D%204%20%7C%7C%20hexValue.length%20%3D%3D%207))%20%7BhexValue%20%3D%20hexValue.toLowerCase().match(regex)%3Bif%20(hexValue%5B0%5D.length%20%3D%3D%204)%20%7BhexValue%20%3D%20hexValue.splice(1).map(function(v)%7Breturn%20%22%22%2Bv%2Bv%3B%7D)%3B%7Delse%7BhexValue%20%3D%20hexValue.splice(1)%3B%7Dvar%20rgbValue%20%3D%20hexValue.map(function(v)%7Breturn%20parseInt(v%2C16)%3B%7D)%3Balert(%22A%20cor%20em%20rgba%20%C3%A9%20%5Cn%5Cn%22%20%2B%22rbga(%22%2BrgbValue.join(%22%2C%22)%2B%22%2C1)%22)%3B%7Delse%7Balert(%22A%20String%20que%20voc%C3%AA%20digitou%20n%C3%A3o%20%C3%A9%20v%C3%A1lida%22)%3B%7D%7D)()%7D)()">Hex2Rgb</a>
+
+        </p>
+        <p>O código usado neste bookmarlet é o seguinte:</p>
+        <pre><code class="language-js">  (function(){
+              &quot;use strict&quot;;
+              var regex = /#([abcdef0-9]{1,2})([abcdef0-9]{1,2})([abcdef0-9]{1,2})/;
+              var hexValue = prompt(&quot;Digite a cor em hexadecimal \nEx: #ffffff ou #fff&quot;);
+              if (hexValue &amp;&amp; (hexValue.length == 4 || hexValue.length == 7)) {
+                  hexValue = hexValue.toLowerCase().match(regex);
+                  if (hexValue[0].length == 4) {
+          
+                      hexValue = hexValue.splice(1).map(function(v){
+                          return &quot;&quot;+v+v;
+                      });
+                  }else{
+                      hexValue = hexValue.splice(1);
+                  }
+          
+                  var rgbValue = hexValue.map(function(v){
+                      return parseInt(v,16);
+                  });
+          
+                  alert(
+                      &quot;A cor em rgba é \n\n&quot; +
+                      &quot;rbga(&quot;+rgbValue.join(&quot;,&quot;)+&quot;,1)&quot;
+                  );
+              }else{
+                  alert(&quot;A String que você digitou não é válida&quot;);
+              }
+          })();
+        </code></pre>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script>
+    
+</body>
+</html>
