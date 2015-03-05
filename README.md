@@ -4,7 +4,7 @@ Este é um simples bookmarklet, para converter cores no formato hexadecimal, par
 
 Entre no link abaixo para testar
 
-[Hexadecimal para rgba();](rayansostenes.github.io/bookmarklet-hexdecimal-to-rgb-color)
+[Hexadecimal para rgba();](http://rayansostenes.github.io/bookmarklet-hexdecimal-to-rgb-color)
 
 O código usado neste bookmarlet é o seguinte:
 
