@@ -1,6 +1,6 @@
 (function(){
     "use strict";
-    var regex = /#([abcdef0-9]{1,2})([abcdef0-9]{1,2})([abcdef0-9]{1,2})/;
+    var regex = /#([a-f0-9]{1,2})([a-f0-9]{1,2})([a-f0-9]{1,2})/;
     var hexValue = prompt("Digite a cor em hexadecimal \nEx: #ffffff ou #fff");
     if (hexValue && (hexValue.length == 4 || hexValue.length == 7)) {
         hexValue = hexValue.toLowerCase().match(regex);
